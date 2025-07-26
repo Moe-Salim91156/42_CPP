@@ -6,26 +6,28 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 16:17:14 by msalim            #+#    #+#             */
-/*   Updated: 2025/07/26 19:16:53 by msalim           ###   ########.fr       */
+/*   Updated: 2025/07/26 19:42:03 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	<iostream>
-#include	"Contact.hpp"
+#include "PhoneBook.hpp"
 
-int	main(void)
-{
-	std::string input; 
-	Contact con1;
+int main() {
+    PhoneBook book;
+    std::string input;
 
-	std::cout << "Enter Command (add, 2:Display)" << std::endl;
-	while (input.compare("Exit"))
-	{
-		std::cin >> input;
-	if (!input.compare("add"))
-	{
-		con1.fill_contact();
-	}
-	}
-	return (0);
+    while (true) {
+        std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+        std::getline(std::cin, input);
+
+        if (input == "ADD")
+            book.add_contact();
+        else if (input == "SEARCH")
+            book.search_contact();
+        else if (input == "EXIT")
+            break;
+    }
+    return 0;
 }
+

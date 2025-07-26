@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 18:59:15 by msalim            #+#    #+#             */
-/*   Updated: 2025/07/26 19:07:57 by msalim           ###   ########.fr       */
+/*   Updated: 2025/07/26 19:23:04 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class PhoneBook {
 	public:
 		void	add_contact();
 		void	search_contact();
+		PhoneBook();
 };
 
 #endif
