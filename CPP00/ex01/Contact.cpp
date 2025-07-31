@@ -10,25 +10,64 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<iostream>
 #include	"Contact.hpp"
 
-void	Contact::fill_contact()
+std::string Contact::getFirstName() const {
+    return FirstName;
+}
+
+std::string Contact::getLastName() const {
+    return LastName;
+}
+
+std::string Contact::getNickName() const {
+    return NickName;
+}
+
+std::string Contact::getPhoneNumber() const {
+    return PhoneNumber;
+}
+
+std::string Contact::getDarkestSecret() const {
+    return DarkestSecret;
+}
+
+bool safe_getline(std::string &input) 
 {
-	std::cout << "First Name: ";
-	std::cin >> FirstName;
+    if (!std::getline(std::cin, input)) {
+        std::cout << "\nEOF detected. Exiting program.\n";
+        return false; 
+    }
+    if (input.empty()) 
+    {
+        std::cout << "Field cannot be empty. Please try again.\n";
+        return safe_getline(input);
+    }
+    return true;
+}
 
-    	std::cout << "Last Name: ";
-	std::cin >> LastName;
+bool Contact::fill_contact() 
+{
+    std::cout << "First Name: ";
+    if (!safe_getline(FirstName)) 
+	    return false;
 
-    	std::cout << "Nickname: ";
-	std::cin >> NickName;
+    std::cout << "Last Name: ";
+    if (!safe_getline(LastName))
+	    return false;
 
-    	std::cout << "Phone Number: ";
-	std::cin >> PhoneNumber;
-	
-	std::cout << "Darkest Secret: ";
-	std::cin >> DarkestSecret;
+    std::cout << "Nickname: ";
+    if (!safe_getline(NickName))
+	    return false;
+
+    std::cout << "Phone Number: ";
+    if (!safe_getline(PhoneNumber)) 
+	    return false;
+
+    std::cout << "Darkest Secret: ";
+    if (!safe_getline(DarkestSecret)) 
+	    return false;
+    return true;
 }
 
 void	Contact::display_contact()

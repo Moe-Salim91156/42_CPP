@@ -22,8 +22,11 @@ class	Contact {
 		std::string	PhoneNumber;
 		std::string	DarkestSecret;
 	public:
-		void	fill_contact();
+		bool	fill_contact();
 		void	display_contact();
-
-};
+	   	std::string getFirstName() const;
+    		std::string getLastName() const;
+    		std::string getNickName() const;
+    		std::string getPhoneNumber() const;
+    		std::string getDarkestSecret() const;};
 #endif

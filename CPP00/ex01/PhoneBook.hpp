@@ -13,6 +13,10 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+#include <iomanip>  // for setw
+#include <iostream>
+#include <cstdlib>  // for atoi
+
 #include	"Contact.hpp"
 
 class PhoneBook {
@@ -21,9 +25,10 @@ class PhoneBook {
 		int count;
 		Contact contacts[8];
 	public:
+		void display_contacts_list(); 
 		void	add_contact();
-		void	search_contact();
+		bool	search_contact();
 		PhoneBook();
 };
-
+bool safe_getline(std::string &input) ;
 #endif
