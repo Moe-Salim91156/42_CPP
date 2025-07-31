@@ -19,7 +19,7 @@ int main() {
 
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, input);
+	std::cin >> input;
 
         if (input == "ADD")
             book.add_contact();

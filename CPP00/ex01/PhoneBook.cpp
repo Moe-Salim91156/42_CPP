@@ -31,6 +31,12 @@ void	PhoneBook::search_contact()
 {
 	int con_index;
 	std::cin >> con_index;
+	if (con_index >=8)
+	{
+		std::cout << "invalide range\n";
+		return;
+	}
+
 	contacts[con_index].display_contact();
 
 }
