@@ -30,5 +30,5 @@ class PhoneBook {
 		bool	search_contact();
 		PhoneBook();
 };
-bool safe_getline(std::string &input) ;
+/* bool safe_getline(std::string &input) ; */
 #endif

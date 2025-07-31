@@ -17,6 +17,21 @@ PhoneBook::PhoneBook()
 	count = 0;
 }
 
+bool safe_getline(std::string &input) 
+{
+    if (!std::getline(std::cin, input)) {
+        std::cout << "\nEOF detected. Exiting program.\n";
+        return false; 
+    }
+    if (input.empty()) 
+    {
+        std::cout << "Field cannot be empty. Please try again.\n";
+        return safe_getline(input);
+    }
+    return true;
+}
+
+
 void PhoneBook::add_contact() {
     Contact c;
     c.fill_contact();

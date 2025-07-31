@@ -32,20 +32,6 @@ std::string Contact::getDarkestSecret() const {
     return DarkestSecret;
 }
 
-bool safe_getline(std::string &input) 
-{
-    if (!std::getline(std::cin, input)) {
-        std::cout << "\nEOF detected. Exiting program.\n";
-        return false; 
-    }
-    if (input.empty()) 
-    {
-        std::cout << "Field cannot be empty. Please try again.\n";
-        return safe_getline(input);
-    }
-    return true;
-}
-
 bool Contact::fill_contact() 
 {
     std::cout << "First Name: ";

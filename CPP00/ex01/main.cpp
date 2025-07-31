@@ -19,9 +19,8 @@ int main() {
 
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        if (!std::getline(std::cin, input))
+        if (!safe_getline(input))
 		return (1);
-
         if (input == "ADD")
             book.add_contact();
         else if (input == "SEARCH")

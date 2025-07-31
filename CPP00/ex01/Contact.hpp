@@ -29,4 +29,6 @@ class	Contact {
     		std::string getNickName() const;
     		std::string getPhoneNumber() const;
     		std::string getDarkestSecret() const;};
+
+bool safe_getline(std::string &input) ;
 #endif
