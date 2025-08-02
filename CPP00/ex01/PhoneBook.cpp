@@ -50,14 +50,13 @@ static std::string format_field(const std::string &str) {
 
 void PhoneBook::display_contacts_list() 
 {
-    std::cout << "     index|First Name| Last Name|  Nickname| PhoneNumber \n";
+    std::cout << "     index|First Name| Last Name|  Nickname\n";
     for (int i = 0; i < 8; ++i) 
     {
        		 std::cout << std::setw(10) << i << "|"
                   << format_field(contacts[i].getFirstName()) << "|"
                   << format_field(contacts[i].getLastName()) << "|"
-                  << format_field(contacts[i].getNickName()) << "|"
-		  << format_field(contacts[i].getPhoneNumber()) << "\n";
+                  << format_field(contacts[i].getNickName()) << "\n";
     }
 }
 
@@ -67,13 +66,13 @@ bool	PhoneBook::search_contact()
 	std::string line;
 
 	display_contacts_list();
-	std::cout << "Enter the Contact Index" << std::endl;
+	std::cout << "Enter the Contact Index : ";
 	if (!safe_getline(line))
 		return false;
 	con_index = atoi(line.c_str());
-	if (con_index >=8)
+	if (con_index >= 8)
 	{
-		std::cout << "invalide range\n";
+		std::cout << "invalid range\n";
 		return false;
 	}
 	contacts[con_index].display_contact();

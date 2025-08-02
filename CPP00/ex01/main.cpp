@@ -18,14 +18,14 @@ int main() {
     std::string input;
 
     while (true) {
-        std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+        std::cout << "Enter command (add, search, exit): ";
         if (!std::getline(std::cin, input))
 		return (1);
-        if (input == "ADD")
+        if (input == "add")
             book.add_contact();
-        else if (input == "SEARCH")
+        else if (input == "search")
             book.search_contact();
-        else if (input == "EXIT")
+        else if (input == "exit")
             break;
     }
     return 0;
