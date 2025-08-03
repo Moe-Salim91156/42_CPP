@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 16:17:14 by msalim            #+#    #+#             */
-/*   Updated: 2025/07/26 19:42:03 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/03 02:31:25 by moe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int main() {
         std::cout << "Enter command (add, search, exit): ";
         if (!std::getline(std::cin, input))
 		return (1);
-        if (input == "add")
+        if (!input.compare("add")) 
             book.add_contact();
-        else if (input == "search")
+        else if (!input.compare("search"))
             book.search_contact();
-        else if (input == "exit")
+        else if (!input.compare("exit"))
             break;
     }
     return 0;

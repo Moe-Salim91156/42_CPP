@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 19:08:21 by msalim            #+#    #+#             */
-/*   Updated: 2025/07/26 19:40:37 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/03 02:24:26 by moe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ bool Contact::fill_contact()
 
 void	Contact::display_contact()
 {
-	std::cout << "FirstName : " << FirstName << std::endl ;
-	std::cout << "LastName : " << LastName	<< std::endl ;
+	std::cout << "FirstName	: " << FirstName << std::endl ;
+	std::cout << "LastName	: " << LastName	<< std::endl ;
 	std::cout << "NickName	: " << NickName	<< std::endl ;
-	std::cout << "PhoneNumber : " << PhoneNumber << std::endl ;
-	std::cout << "DarkestSecret : " << DarkestSecret << std::endl ;
+	std::cout << "PhoneNumber	: " << PhoneNumber << std::endl ;
+	std::cout << "DarkestSecret	: " << DarkestSecret << std::endl ;
 }
