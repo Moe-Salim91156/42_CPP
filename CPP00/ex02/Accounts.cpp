@@ -50,9 +50,13 @@ bool Account::makeWithdrawal(int withdrawl)
 		std::cout << "refused" << std::endl;
 		return (false);
 	}
-	//TODO  withdrawl condition on log if good or not , printing differ
-	this->_amount -= withdrawl;
-	this->_nbWithdrawals++;
+	else
+	{
+		std::cout << withdrawl << ";";
+		this->_amount -= withdrawl;
+		std::cout << "amout:" << this->_amount << ";";
+	}
+	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return (true);
 }
 
