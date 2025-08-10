@@ -6,13 +6,15 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 17:26:49 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/10 19:34:02 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/10 19:44:13 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie(std::string name)
+Zombie*	newZombie(const std::string &name)
 {
+	Zombie *z = new Zombie(name);
 
+	return (z);
 }

@@ -6,13 +6,15 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 17:13:13 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/09 17:21:12 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/10 19:45:51 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <iostream>
+#include "Zombie.hpp"
 
 int main(void)
 {
-	std::cout << "asdfasdf" << std::endl;
+       Zombie *z = newZombie("first");	
+       z->announce();
+       delete z;
 	return (0);
 }
