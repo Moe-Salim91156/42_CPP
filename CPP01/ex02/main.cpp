@@ -5,15 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 17:13:13 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/11 15:08:16 by msalim           ###   ########.fr       */
+/*   Created: 2025/08/11 16:13:47 by msalim            #+#    #+#             */
+/*   Updated: 2025/08/11 16:32:20 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Zombie.hpp"
 
-int main(void)
+#include <iostream>
+
+int	main(void)
 {
-       Zombie *z = newZombie("first");	
-       delete z;
-       randomChump("second");
+	std::string Brain = "HI THIS IS BRAIN";
+	std::string *ptr = &Brain;
+	std::string &Ref = Brain;
+
+	std::cout << &Brain << std::endl ;
+	std::cout << ptr << std::endl ;
+	std::cout << &Ref << std::endl ;
+
+
+	std::cout << Brain << std::endl;
+	std::cout << *ptr << std::endl;
+	std::cout << Ref << std::endl;
+	return (0);
 }

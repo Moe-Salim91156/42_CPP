@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 17:13:13 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/11 15:08:16 by msalim           ###   ########.fr       */
+/*   Created: 2025/08/11 18:14:17 by msalim            #+#    #+#             */
+/*   Updated: 2025/08/11 19:24:05 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Zombie.hpp"
 
-int main(void)
+#include "HumanB.hpp"
+
+HumanB::HumanB(const std::string name) : _name(name), weapon(NULL) {};
+
+void	HumanB::attack()
 {
-       Zombie *z = newZombie("first");	
-       delete z;
-       randomChump("second");
+	std::cout << _name << " attacks with their " << weapon->getType() << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon &w)
+{
+	weapon = &w;
 }

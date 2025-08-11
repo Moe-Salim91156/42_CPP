@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 17:13:13 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/11 15:08:16 by msalim           ###   ########.fr       */
+/*   Created: 2025/08/11 17:55:10 by msalim            #+#    #+#             */
+/*   Updated: 2025/08/11 19:19:56 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int main(void)
-{
-       Zombie *z = newZombie("first");	
-       delete z;
-       randomChump("second");
-}
+#include	"Weapon.hpp"
+class HumanA {
+	private:
+		const std::string _name;
+		Weapon &weapon;
+	public:
+		HumanA(const std::string name, Weapon &weapon);
+		void	attack();
+
+};
+
+#endif

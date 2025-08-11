@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 17:22:18 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/10 19:41:43 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/11 13:28:41 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ void	Zombie::announce(void)
 void	Zombie::setName(std::string const &name)
 {
 	_name = name;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "has been destroyed" << std::endl;
 }

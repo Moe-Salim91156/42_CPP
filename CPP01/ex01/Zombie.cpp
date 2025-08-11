@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 17:13:13 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/11 15:08:16 by msalim           ###   ########.fr       */
+/*   Created: 2025/08/09 17:22:18 by msalim            #+#    #+#             */
+/*   Updated: 2025/08/11 16:08:39 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "Zombie.hpp"
 
-int main(void)
+Zombie::Zombie() : _name("unnamed") {}
+Zombie::Zombie(const std::string &n) : _name(n) {}
+
+void	Zombie::announce(void)
 {
-       Zombie *z = newZombie("first");	
-       delete z;
-       randomChump("second");
+	std::cout << _name << ": " << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName(std::string const &name)
+{
+	_name = name;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "has been destroyed" << std::endl;
 }

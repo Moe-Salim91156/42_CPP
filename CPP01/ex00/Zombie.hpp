@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 17:22:49 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/10 19:44:31 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/11 13:28:23 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef ZOMBIE_HPP
@@ -20,6 +20,7 @@ class Zombie
 		std::string _name;
 	public:
 		Zombie(const std::string &n);
+		~Zombie();
 		void	announce(void);
 		void setName(std::string const &name);
 
@@ -27,4 +28,5 @@ class Zombie
 };
 
 Zombie*	newZombie(const std::string &name);
+void	randomChump(const std::string &name);
 #endif

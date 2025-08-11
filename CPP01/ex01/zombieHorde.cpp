@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 17:13:13 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/11 15:08:16 by msalim           ###   ########.fr       */
+/*   Created: 2025/08/11 15:30:57 by msalim            #+#    #+#             */
+/*   Updated: 2025/08/11 16:03:58 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "Zombie.hpp"
 
-int main(void)
+Zombie* zombieHorde( int N, const std::string &name )
 {
-       Zombie *z = newZombie("first");	
-       delete z;
-       randomChump("second");
+	if (N <= 0)
+		return (NULL);
+
+	Zombie *horde = new Zombie[N];
+
+	for (int i = 0; i < N ; i++)
+		horde[i].setName(name);
+	return (horde);
 }
