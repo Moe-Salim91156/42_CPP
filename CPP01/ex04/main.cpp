@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 14:05:15 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/12 16:11:09 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/12 16:28:22 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@ std::string	string_replace(std::string s1, std::string s2, std::string input)
 {
 
 	size_t	pos = 0;
+	std::cout << "input before is : " << input << std::endl ;
 	pos = input.find(s1);
-	if (pos != std::string::npos)
+	while (pos != std::string::npos)
 	{
-		input.erase(pos,input.length() - pos); 
+		//search and erase
+		input.erase(pos,s1.length()); 
 		input.insert(pos,s2);
+		pos = input.find(s1);
 	}	
+	std::cout << "input now is : " << input << std::endl ;
 	return (input);
 }
 
