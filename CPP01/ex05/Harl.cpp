@@ -6,7 +6,7 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 12:41:10 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/13 16:14:31 by msalim           ###   ########.fr       */
+/*   Updated: 2025/08/13 16:21:57 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Harl.hpp"
@@ -39,7 +39,10 @@ void	Harl::complain(const std::string &level)
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == levels[i])
+		{
 			(this->*fptrs[i])();
+			return ;
+		}
 	}		
+	std::cout << "No Valid Level " << std::endl;
 }
-
