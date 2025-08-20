@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
-
+#include	<cmath>
 const int	Fixed::_fract_bits = 8;
 
 Fixed::Fixed(void) : _number(0) {
@@ -22,14 +22,16 @@ int	Fixed::getRawBits(void) const
 	std::cout << "Get Raw Bits called " << std::endl;
 	return (_number);
 }
+
 Fixed::Fixed(const int input)  {
 	_number = input << _fract_bits;
 	std::cout << "default constructor int called" << std::endl;
 }
 
+
 Fixed::Fixed(const float float_input)
 {
-	_number = float_input * (1 << _fract_bits);
+	_number = roundf(float_input * (1 << _fract_bits));
 	std::cout << "default constructor float called" << std::endl;
 }
 
