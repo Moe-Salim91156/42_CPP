@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/18 16:32:46 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/20 16:09:43 by msalim           ###   ########.fr       */
+/*   Created: 2025/08/20 16:35:38 by msalim            #+#    #+#             */
+/*   Updated: 2025/08/20 19:54:35 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FIXED_HPP
@@ -25,10 +25,35 @@ class Fixed {
 		Fixed(const Fixed &copy_class);
 		Fixed& operator=(const Fixed &other);
 		~Fixed(void);
+		void	setRawBits(int const raw);
+		int	getRawBits(void) const;
 		float	toFloat(void)const;
+
 		int	toInt(void)const;
-/* std::ostream &operator<<(std::ostream &o, const Fixed &ex); */
-		/* int	getNumber(void)const; */
+		Fixed	operator+(const Fixed &other) const;
+		Fixed	operator-(const Fixed &other) const;
+		Fixed	operator*(const Fixed &other) const;
+		Fixed	operator/(const Fixed &other) const;
+		bool operator<(const Fixed& other) const;
+		bool operator>(const Fixed& other) const;
+		bool operator>=(const Fixed& other) const;
+		bool operator<=(const Fixed& other) const;
+		bool operator==(const Fixed& other) const;
+		bool operator!=(const Fixed& other) const;
+		Fixed&	operator++();
+		Fixed	operator++(int);
+		Fixed&	operator--();
+		Fixed	operator--(int);	
+
+		/*static members*/	
+		static	Fixed	&min(Fixed &a, Fixed &b);
+		static	const Fixed	&min(const Fixed &a, const Fixed &b);
+
+		static	Fixed	&max(Fixed &a, Fixed &b);
+		static	const Fixed	&max(const Fixed &a, const Fixed &b);
+
+		// getters , maybe sette
+		
 };
-		std::ostream	&operator<<(std::ostream &o, Fixed const &fixed);
+	std::ostream	&operator<<(std::ostream &o, Fixed const &fixed);
 #endif
