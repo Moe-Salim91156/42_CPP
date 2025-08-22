@@ -77,6 +77,7 @@ Fixed	Fixed::operator-(const Fixed &other) const
 {
 	return (this->_number - other._number);
 }
+
 Fixed Fixed::operator*(const Fixed &obj) const {
 	long long newVal = static_cast<long long>(this->_number) * obj.getRawBits();
 	newVal >>= this->_fract_bits;
