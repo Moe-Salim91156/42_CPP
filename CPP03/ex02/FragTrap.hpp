@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 19:12:28 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/26 19:20:02 by msalim           ###   ########.fr       */
+/*   Created: 2025/09/01 16:29:58 by msalim            #+#    #+#             */
+/*   Updated: 2025/09/01 16:30:41 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.h"
 
-int main()
-{
-   ClapTrap c1("Clappy");
+class FragTrap : public ClapTrap {
+	public:
+    	FragTrap(const std::string& name);
+    	FragTrap(const FragTrap& other);
+    	FragTrap& operator=(const FragTrap& other);
+    	~FragTrap();
 
-    c1.attack("target dummy");
-    c1.takeDamage(5);
-    c1.beRepaired(3);
-    c1.takeDamage(15);  // should drop to 0 HP
-    c1.attack("another dummy"); // should fail
+    	void attack(const std::string& target); 
+    	void highFivesGuys();
+};
 
-    return 0;return 0;
-}
+#endif
+

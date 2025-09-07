@@ -6,21 +6,36 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:12:28 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/26 19:20:02 by msalim           ###   ########.fr       */
+/*   Updated: 2025/09/01 16:40:30 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
+#include "FragTrap.hpp"
 
-int main()
+int	main(void)
 {
-   ClapTrap c1("Clappy");
+	FragTrap frag("Fraggy");
 
-    c1.attack("target dummy");
-    c1.takeDamage(5);
-    c1.beRepaired(3);
-    c1.takeDamage(15);  // should drop to 0 HP
-    c1.attack("another dummy"); // should fail
+	frag.attack("Enemy");
+	frag.takeDamage(5);
+	frag.beRepaired(3);
+	frag.highFivesGuys();
 
-    return 0;return 0;
+	FragTrap copyFrag(frag);
+	copyFrag.attack("Another Enemy");
+	copyFrag.takeDamage(10);
+	copyFrag.beRepaired(5);
+	copyFrag.highFivesGuys();
+
+	FragTrap assignedFrag("Temp");
+	assignedFrag = frag;
+	assignedFrag.attack("Third Enemy");
+	assignedFrag.takeDamage(15);
+	assignedFrag.beRepaired(7);
+	assignedFrag.takeDamage(100);
+	assignedFrag.attack("No One");
+	assignedFrag.highFivesGuys();
+
+	return (0);
 }

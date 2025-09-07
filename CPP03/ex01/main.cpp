@@ -6,21 +6,29 @@
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:12:28 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/26 19:20:02 by msalim           ###   ########.fr       */
+/*   Updated: 2025/09/01 16:25:37 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
+#include "ScavTrap.hpp"
 
-int main()
-{
-   ClapTrap c1("Clappy");
+int main() {
+	//base
+    ScavTrap s1("Guardian");
 
-    c1.attack("target dummy");
-    c1.takeDamage(5);
-    c1.beRepaired(3);
-    c1.takeDamage(15);  // should drop to 0 HP
-    c1.attack("another dummy"); // should fail
+    // Copy constructor
+    ScavTrap s2(s1);  
+    s2.attack("Enemy");  
+    s2.guardGate();
 
-    return 0;return 0;
+    // Assignment operator
+    ScavTrap s3("Temp");
+    s3 = s1;           // s3 now becomes a copy of s1
+		       // this shold call the COPY Assignment opertor
+    s3.attack("Enemy");  
+    s3.guardGate();
+
+    return 0;
 }
+

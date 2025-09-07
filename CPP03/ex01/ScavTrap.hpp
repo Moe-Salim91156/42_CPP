@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 19:12:28 by msalim            #+#    #+#             */
-/*   Updated: 2025/08/26 19:20:02 by msalim           ###   ########.fr       */
+/*   Created: 2025/09/01 15:47:30 by msalim            #+#    #+#             */
+/*   Updated: 2025/09/01 16:33:58 by msalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
 #include "ClapTrap.h"
 
-int main()
+class	ScavTrap : public ClapTrap
 {
-   ClapTrap c1("Clappy");
+public:
+	ScavTrap(const std::string &name);
+	ScavTrap(const ScavTrap &other);
+	ScavTrap &operator=(const ScavTrap &other);
+	~ScavTrap();
 
-    c1.attack("target dummy");
-    c1.takeDamage(5);
-    c1.beRepaired(3);
-    c1.takeDamage(15);  // should drop to 0 HP
-    c1.attack("another dummy"); // should fail
-
-    return 0;return 0;
-}
+	void	guardGate();
+	void	attack(const std::string &target);
+};
+#endif
